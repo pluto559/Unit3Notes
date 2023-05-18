@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="card-area">
+    <div class="card">
+            <div class="picture-section">
+                <div class="update">
+                </div>
+                <img class="picture" src="https://store.playstation.com/store/api/chihiro/00_09_000/container/US/en/99/UP1655-CUSA05209_00-AV00000000000002/0/image?_version=00_09_000&platform=chihiro&bg_color=000000&opacity=100&w=720&h=720" alt="avatar">
+                <div class="company">
+                </div>
+            </div>
+
+<div>
+    <label for="item">Enter an Item</label>
+    <input type="text" id="item" name="list">
+</div>
+<button id="button">Add Item</button>
+<div>
+    <ul>
+    </ul>
+</div>
+
+<script>
+    const myList = document.querySelector('ul');
+    const item = document.getElementById('item');
+
+    function addItem(){
+
+        let newElement = document.createElement('li');
+        newElement.innerHTML = item.value;
+        newElement.addEventListener('click', function(e){
+            newElement.remove();
+        });
+        myList.appendChild(newElement)
+        item.value = "";
+    }
+    button.addEventListener('click', addItem);
+</script>
+</body>
+</html>
