@@ -7,41 +7,65 @@
 </head>
 <body>
 
-<div class="card-area">
-    <div class="card">
-            <div class="picture-section">
-                <div class="update">
-                </div>
-                <img class="picture" src="https://store.playstation.com/store/api/chihiro/00_09_000/container/US/en/99/UP1655-CUSA05209_00-AV00000000000002/0/image?_version=00_09_000&platform=chihiro&bg_color=000000&opacity=100&w=720&h=720" alt="avatar">
-                <div class="company">
-                </div>
-            </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Project Check In</title>
+    <style>
 
+    </style>
+</head>
+<body>
+<h2>5-Function Calculator</h2>
 <div>
-    <label for="item">Enter an Item</label>
-    <input type="text" id="item" name="list">
+    <label for="num1">Number 1</label>
+    <input name="number1" type="text" size=10 id='num1'/>
+    <label for="num2">Number 2</label>
+    <input name="number2" type="text" size=10 id='num2'/>
+    <label for="result">Result</label>
+    <input type="text" id='result' readonly >
 </div>
-<button id="button">Add Item</button>
+<br>
 <div>
-    <ul>
-    </ul>
+    <button onclick="showresult('1')">+</button>
+    <button onclick="showresult('2')">-</button>
+    <button onclick="showresult('3')">*</button>
+    <button onclick="showresult('4')">/</button>
+    <button onclick="showresult('5')">%</button>
 </div>
-
 <script>
-    const myList = document.querySelector('ul');
-    const item = document.getElementById('item');
 
-    function addItem(){
+    function showresult(choice){
+        let n1 = parseFloat(document.getElementById('num1').value);
+        let n2 = parseFloat(document.getElementById('num2').value);
+        let r;
+        let c = choice;
 
-        let newElement = document.createElement('li');
-        newElement.innerHTML = item.value;
-        newElement.addEventListener('click', function(e){
-            newElement.remove();
-        });
-        myList.appendChild(newElement)
-        item.value = "";
+        switch(c){
+            case '1':
+                r=n1+n2;
+                break;
+            case '2':
+                r=n1-n2;
+                break;
+            case '3':
+                r=n1*n2;
+                break;
+            case '4':
+                r=n1/n2;
+                break;
+            case '5':
+                r=n2*100/n1;
+                break;
+            default:
+                break;
+        }
+        document.getElementById('result').value=r;
     }
-    button.addEventListener('click', addItem);
 </script>
 </body>
+</html></body>
 </html>
+
+
